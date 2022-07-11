@@ -719,3 +719,42 @@ textarea:focus {
 .wishlist-table table .product-add-to-cart > a:hover {
   background: #2d7ce6;
 }
+
+/* Navbar modification */
+
+span {
+  margin: 0 0 0 -20px;
+}
+
+/*.header__right {
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    align-items: center;
+}*/
+
+.mean-container a.meanmenu-reveal span {
+  background: #444 none repeat scroll 0 0;
+  display: block;
+  height: 3px;
+  margin: 3px;
+}
+
+.field_error{color:red;}
+
+.accordion .accordion__hide {
+    background: #f4f4f4;
+    height: 65px;
+    line-height: 65px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: "Cabin";
+    cursor: pointer;
+}

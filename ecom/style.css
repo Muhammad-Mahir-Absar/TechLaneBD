@@ -302,6 +302,7 @@
       line-height: 50px;
       padding: 0 36px;
       transition: 0.3s;
+	  margin-top: 20px;
   }
   
   .fr__btn:hover {
@@ -1916,8 +1917,8 @@
       text-transform: uppercase;
   }
   .ht__pro__desc {
-      margin-top: 25px;
-  }
+    margin: 18px;
+}
   
   .pro__cat__list {
       display: flex;
