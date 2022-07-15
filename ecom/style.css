@@ -3552,17 +3552,42 @@
       margin-right: -20px;
   }
   /*New Code*/
-  
-  .box__layout {
-      margin: 0 90px;
-  }
-  .ht__cat__thumb a img {
-      width: 100%;
-  }
-  .slick-initialized .slick-slide {
-      outline: none;
-  }
-  
+
+.box__layout {
+    margin: 0 90px;
+}
+.ht__cat__thumb a img {
+    width: 100%;
+}
+.slick-initialized .slick-slide {
+    outline: none;
+}
+
+
+/* ---------------------------- 
+.email_verify_otp{display:none;}
+.height_60px{height:60px;}
+#email_otp_result{
+	margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}*/
+
+/* .mobile_verify_otp{display:none;}
+#mobile_otp_result{
+	margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+} */
+
+/*a.forgot_password {
+    margin-left: 10px;
+    font-size: 20px;
+}*/
+
+.password_label{font-size:20px;}
+
+
   
   
   

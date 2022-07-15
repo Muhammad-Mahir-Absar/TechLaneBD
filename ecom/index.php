@@ -16,14 +16,14 @@ require('top.php');
                                         <h2>Hello There!</h2>
                                         <h1>Latest gadgets at your doorsteps</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.html">Shop Now</a>
+                                            <a href="cart.php">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
                                 <div class="slide__thumb">
-                                    <img src="images/slider/fornt-img/1.png" alt="slider images">
+                                    <img src="tmp/slide.png" alt="slider images">
                                 </div>
                             </div>
                         </div>
@@ -37,17 +37,17 @@ require('top.php');
                             <div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
                                 <div class="slide">
                                     <div class="slider__inner">
-                                        <h2>Hello There!</h2>
-                                        <h1>Latest gadgets at your doorsteps</h1>
+                                        <h2 class ="head-one">Buy the tech you need</h2>
+                                        <h1 class ="head-two">Premium products at cheap price</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.html">Shop Now</a>
+                                            <a href="cart.php">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
                                 <div class="slide__thumb">
-                                    <img src="images/slider/fornt-img/2.png" alt="slider images">
+                                    <img src="tmp/slide2.png" alt="slider images">
                                 </div>
                             </div>
                         </div>
@@ -64,17 +64,17 @@ require('top.php');
                     <div class="col-xs-12">
                         <div class="section__title--2 text-center">
                             <h2 class="title__line">New Arrivals</h2>
-                            <p>Get Your Desired Product from New Arrivals!</p>
+                            <p>Get your desired product from new arrivals section</p>
                         </div>
                     </div>
                 </div>
                 <div class="htc__product__container">
                     <div class="row">
                         <div class="product__list clearfix mt--30">
-                                <?php
-                        $get_product=get_product($con,4);
-                        foreach($get_product as $list){
-                      ?>
+							<?php
+							$get_product=get_product($con,4);
+							foreach($get_product as $list){
+							?>
                             <!-- Start Single Category -->
                             <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
                                 <div class="category">
@@ -83,7 +83,12 @@ require('top.php');
                                             <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
                                         </a>
                                     </div>
-                                    
+                                    <div class="fr__hover__info">
+										<ul class="product__action">
+											<li><a href="javascript:void(0)" onclick="wishlist_manage('<?php echo $list['id']?>','add')"><i class="icon-heart icons"></i></a></li>
+											<li><a href="javascript:void(0)" onclick="manage_cart('<?php echo $list['id']?>','add')"><i class="icon-handbag icons"></i></a></li>
+										</ul>
+									</div>
                                     <div class="fr__product__inner">
                                         <h4><a href="product.php?id=<?php echo $list['id']?>"><?php echo $list['name']?></a></h4>
                                         <ul class="fr__pro__prize">
@@ -93,8 +98,8 @@ require('top.php');
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Single Category -->   
-                            <?php } ?> 
+                            <!-- End Single Category -->
+							<?php } ?>
                         </div>
                     </div>
                 </div>
@@ -108,125 +113,47 @@ require('top.php');
                     <div class="col-xs-12">
                         <div class="section__title--2 text-center">
                             <h2 class="title__line">Best Seller</h2>
-                            <p>But I must explain to you how all this mistaken idea</p>
+                            <p>Best sold products of this website</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="product__wrap clearfix">
-                        <!-- Start Single Category -->
-                        <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-                            <div class="category">
-                                <div class="ht__cat__thumb">
-                                    <a href="product.php">
-                                        <img src="images/product/9.jpg" alt="product images">
-                                    </a>
-                                </div>
-                                <div class="fr__hover__info">
-                                    <ul class="product__action">
-                                        <li><a href="wishlist.html"><i class="icon-heart icons"></i></a></li>
-
-                                        <li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-                                        <li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="fr__product__inner">
-                                    <h4><a href="product.php">Special Wood Basket</a></h4>
-                                    <ul class="fr__pro__prize">
-                                        <li class="old__prize">$30.3</li>
-                                        <li>$25.9</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Category -->
-                        <!-- Start Single Category -->
-                        <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-                            <div class="category">
-                                <div class="ht__cat__thumb">
-                                    <a href="product.php">
-                                        <img src="images/product/10.jpg" alt="product images">
-                                    </a>
-                                </div>
-                                <div class="fr__hover__info">
-                                    <ul class="product__action">
-                                        <li><a href="wishlist.html"><i class="icon-heart icons"></i></a></li>
-
-                                        <li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-                                        <li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="fr__product__inner">
-                                    <h4><a href="product.php">voluptatem accusantium</a></h4>
-                                    <ul class="fr__pro__prize">
-                                        <li class="old__prize">$30.3</li>
-                                        <li>$25.9</li>
-                                    </ul>
+                    <div class="product__list clearfix mt--30">
+							<?php
+							$get_product=get_product($con,4,'','','','','yes');
+							foreach($get_product as $list){
+							?>
+                            <!-- Start Single Category -->
+                            <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
+                                <div class="category">
+                                    <div class="ht__cat__thumb">
+                                        <a href="product.php?id=<?php echo $list['id']?>">
+                                            <img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
+                                        </a>
+                                    </div>
+                                    <div class="fr__hover__info">
+										<ul class="product__action">
+											<li><a href="javascript:void(0)" onclick="wishlist_manage('<?php echo $list['id']?>','add')"><i class="icon-heart icons"></i></a></li>
+											<li><a href="javascript:void(0)" onclick="manage_cart('<?php echo $list['id']?>','add')"><i class="icon-handbag icons"></i></a></li>
+										</ul>
+									</div>
+                                    <div class="fr__product__inner">
+                                        <h4><a href="product.php?id=<?php echo $list['id']?>"><?php echo $list['name']?></a></h4>
+                                        <ul class="fr__pro__prize">
+                                            <li class="old__prize"><?php echo $list['mrp']?></li>
+                                            <li><?php echo $list['price']?></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- End Single Category -->
+							<?php } ?>
                         </div>
-                        <!-- End Single Category -->
-                        <!-- Start Single Category -->
-                        <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-                            <div class="category">
-                                <div class="ht__cat__thumb">
-                                    <a href="product.php">
-                                        <img src="images/product/11.jpg" alt="product images">
-                                    </a>
-                                </div>
-                                <div class="fr__hover__info">
-                                    <ul class="product__action">
-                                        <li><a href="wishlist.html"><i class="icon-heart icons"></i></a></li>
-
-                                        <li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-                                        <li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="fr__product__inner">
-                                    <h4><a href="product.php">Product Dummy Name</a></h4>
-                                    <ul class="fr__pro__prize">
-                                        <li class="old__prize">$30.3</li>
-                                        <li>$25.9</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Category -->
-                        <!-- Start Single Category -->
-                        <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-                            <div class="category">
-                                <div class="ht__cat__thumb">
-                                    <a href="product.php">
-                                        <img src="images/product/12.jpg" alt="product images">
-                                    </a>
-                                </div>
-                                <div class="fr__hover__info">
-                                    <ul class="product__action">
-                                        <li><a href="wishlist.html"><i class="icon-heart icons"></i></a></li>
-
-                                        <li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-                                        <li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="fr__product__inner">
-                                    <h4><a href="product.php">Product Title Here </a></h4>
-                                    <ul class="fr__pro__prize">
-                                        <li class="old__prize">$30.3</li>
-                                        <li>$25.9</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Category -->
-                    </div>
                 </div>
             </div>
         </section>
         <!-- End Product Area -->
-<?php  
-require('footer.php');
-?>
+		<input type="hidden" id="qty" value="1"/>
+<?php 
+require('footer.php')
+?>        

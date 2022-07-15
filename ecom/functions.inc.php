@@ -1,13 +1,13 @@
 <?php
 function pr($arr){
-    echo '<pre>';
-    print_r($arr);
+	echo '<pre>';
+	print_r($arr);
 }
 
 function prx($arr){
-    echo '<pre>';
-    print_r($arr);
-    die();
+	echo '<pre>';
+	print_r($arr);
+	die();
 }
 
 function get_safe_value($con,$str){
@@ -17,7 +17,7 @@ function get_safe_value($con,$str){
 	}
 }
 
-function get_product($con,$limit='',$cat_id='',$product_id=''){
+function get_product($con,$limit='',$cat_id='',$product_id='',$search_str='',$sort_order='',$is_best_seller='',$sub_categories=''){
 	$sql="select products.*,categories.categories from products,categories where products.status=1 ";
 	if($cat_id!=''){
 		$sql.=" and products.categories_id=$cat_id ";
@@ -25,12 +25,25 @@ function get_product($con,$limit='',$cat_id='',$product_id=''){
 	if($product_id!=''){
 		$sql.=" and products.id=$product_id ";
 	}
+	if($sub_categories!=''){
+		$sql.=" and products.sub_categories_id=$sub_categories ";
+	}
+	if($is_best_seller!=''){
+		$sql.=" and products.best_seller=1 ";
+	}
 	$sql.=" and products.categories_id=categories.id ";
-	$sql.=" order by products.id desc";
+	if($search_str!=''){
+		$sql.=" and (products.name like '%$search_str%' or products.description like '%$search_str%') ";
+	}
+	if($sort_order!=''){
+		$sql.=$sort_order;
+	}else{
+		$sql.=" order by products.id desc ";
+	}
 	if($limit!=''){
 		$sql.=" limit $limit";
 	}
-	
+	//echo $sql;
 	$res=mysqli_query($con,$sql);
 	$data=array();
 	while($row=mysqli_fetch_assoc($res)){
@@ -38,4 +51,9 @@ function get_product($con,$limit='',$cat_id='',$product_id=''){
 	}
 	return $data;
 }
+
+// function wishlist_add($con,$uid,$pid){
+// 	$added_on=date('Y-m-d h:i:s');
+// 	mysqli_query($con,"insert into wishlist(user_id,product_id,added_on) values('$uid','$pid','$added_on')");
+// }
 ?>
